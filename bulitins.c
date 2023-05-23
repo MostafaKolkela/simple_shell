@@ -1,24 +1,5 @@
 #include "builtins.h"
 
-/**
- * builtins - Check and execute the builtins
- *
- * @info: Information about the shell
- * @arguments: Commands and arguments
- *
- * Return: If the command passed is a builtins
- * return _TRUE if not return _FALSE
- **/
-int builtins(general_t *info, char **arguments)
-{
-	int status;
-
-	status = check_builtin(info, arguments);
-	if (status == _FALSE)
-		return (_FALSE);
-
-	return (_TRUE);
-}
 
 
 /**
@@ -51,3 +32,28 @@ int check_builtin(general_t *info, char **arguments)
 
 	return (_FALSE);
 }
+
+
+
+/**
+ * builtins - Check and execute the builtins
+ *
+ * @info: Information about the shell
+ * @arguments: Commands and arguments
+ *
+ * Return: If the command passed is a builtins
+ * return _TRUE if not return _FALSE
+ **/
+int builtins(general_t *info, char **arguments)
+{
+	int status;
+
+	status = check_builtin(info, arguments);
+	if (status == _FALSE)
+		return (_FALSE);
+
+	return (_TRUE);
+}
+
+
+
